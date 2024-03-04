@@ -13,7 +13,3 @@ PATH=~/bin:$PATH
 
 # CLICOLOR tells ls to use in its output.
 export CLICOLOR; CLICOLOR=1
-
-P4CONFIG=.p4config
-export P4CONFIG
-
