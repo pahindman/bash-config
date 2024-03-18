@@ -11,6 +11,8 @@ PATH=~/macports/bin:~/macports/sbin:$PATH
 # Add my personal programs to the path
 PATH=~/bin:$PATH
 
+PATH=/opt/nvim-linux64/bin:$PATH
+
 # CLICOLOR tells ls to use in its output.
 export CLICOLOR; CLICOLOR=1
 
