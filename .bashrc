@@ -12,6 +12,10 @@
 if [ -f /etc/bashrc ]; then
    . /etc/bashrc
 fi
+if [ -f /etc/bash.bashrc ]; then
+   . /etc/bash.bashrc
+fi
+
 
 if [ -f /opt/local/etc/bash_completion ]; then
    . /opt/local/etc/bash_completion
