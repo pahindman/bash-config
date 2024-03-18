@@ -13,3 +13,6 @@ PATH=~/bin:$PATH
 
 # CLICOLOR tells ls to use in its output.
 export CLICOLOR; CLICOLOR=1
+
+# Our ssh-config puts the info about the ssh-agent socket here
+export SSH_AUTH_SOCK; SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
