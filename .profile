@@ -13,5 +13,7 @@ PATH=~/.local/bin:$PATH
 
 PATH=/opt/nvim-linux64/bin:$PATH
 
+PATH=~/.local/bin:$PATH
+
 # CLICOLOR tells ls to use in its output.
 export CLICOLOR; CLICOLOR=1
