@@ -9,7 +9,7 @@ export PATH
 # Add macports folders to the PATH
 PATH=~/macports/bin:~/macports/sbin:$PATH
 # Add my personal programs to the path
-PATH=~/bin:$PATH
+PATH=~/.local/bin:$PATH
 
 PATH=/opt/nvim-linux64/bin:$PATH
 
