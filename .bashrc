@@ -41,7 +41,7 @@ if [ -x $HOME/.bash_it/bash_it.sh ]; then
 else
    case $OSTYPE in
       cygwin) PS1="\\!:\\w\\$ ";;
-      *) PS1="\!:\u@\h:\W\$ ";;
+      *) PS1="\[\e]0;\]\u@\h:\W\[\a\]\!:\u@\h:\W\$ ";;
    esac
 fi
 
