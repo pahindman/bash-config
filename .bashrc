@@ -38,6 +38,16 @@ if [ -x $HOME/.bash_it/bash_it.sh ]; then
 
    # Load Bash It
    . $BASH_IT/bash_it.sh
+elif [ -x $HOME/.git-prompt.sh ]; then
+   GIT_PS1_SHOWCOLORHINTS=yes
+   GIT_PS1_SHOWDIRTYSTATE=yes
+   GIT_PS1_DESCRIBE_STYLE=branch
+   GIT_PS1_SHOWUPSTREAM=auto
+   GIT_PS1_SHOWCONFLICTSTATE=yes
+   GIT_PS1_SHOWSTASHSTATE=yes
+   # Load the git prompt script
+   . $HOME/.git-prompt.sh
+   PROMPT_COMMAND='__git_ps1 "" "\u@\h:\w\$ " "(%s) "'
 else
    case $OSTYPE in
       cygwin) PS1="\\!:\\w\\$ ";;
