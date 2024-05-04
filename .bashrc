@@ -64,3 +64,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export PROMPT_DIRTRIM=3
 export DISPLAY=:0
+
+shopt -s histappend
+HISTCONTROL=ignoreboth
+HISTFILESIZE=100000
+HISTIGNORE="?:??:vim:nvim:exit:pwd:clear:mount:umount:history"
