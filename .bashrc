@@ -26,6 +26,7 @@ if [ -f ~/macports/etc/profile.d/bash_completion.sh ]; then
 fi
 
 set -o ignoreeof
+set -o vi
 
 export HISTCONTROL=ignoreboth
 
