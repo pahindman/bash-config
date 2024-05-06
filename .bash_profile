@@ -14,7 +14,7 @@ if [[ $- == *i* && -f ~/.bashrc ]]; then . ~/.bashrc; fi
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+[[ -d $PYENV_ROOT/bin ]] && eval "$(pyenv init -)"
 
 # finally, do any other bash specific items
 
