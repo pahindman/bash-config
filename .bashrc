@@ -27,6 +27,8 @@ fi
 
 set -o ignoreeof
 
+export HISTCONTROL=ignoreboth
+
 # Use bash-it if it is installed
 if [ -x $HOME/.bash_it/bash_it.sh ]; then
    # Path to the bash it configuration
