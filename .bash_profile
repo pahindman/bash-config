@@ -12,5 +12,9 @@ if [[ -f ~/.profile ]]; then . ~/.profile; fi
 # for interactive non-login shells)
 if [[ $- == *i* && -f ~/.bashrc ]]; then . ~/.bashrc; fi
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # finally, do any other bash specific items
 
