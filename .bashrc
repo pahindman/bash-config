@@ -73,3 +73,4 @@ HISTSIZE=10000
 
 # setup fzf if it is installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
