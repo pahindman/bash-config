@@ -69,3 +69,6 @@ shopt -s histappend
 HISTCONTROL=ignoreboth
 HISTFILESIZE=100000
 HISTIGNORE="?:??:vim:nvim:exit:pwd:clear:mount:umount:history"
+
+# setup fzf if it is installed
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
