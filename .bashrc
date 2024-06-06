@@ -65,6 +65,16 @@ export NVM_DIR="$HOME/.nvm"
 export PROMPT_DIRTRIM=3
 export DISPLAY=:0
 
+# If nvim is installed, use it as the default editor
+# Otherwise, use vim if it is installed
+if type nvim &> /dev/null; then
+   export EDITOR=nvim
+   export VISUAL=nvim
+elif type vim &> /dev/null; then
+   export EDITOR=vim
+   export VISUAL=vim
+fi
+
 shopt -s histappend
 HISTCONTROL=ignoreboth
 HISTFILESIZE=100000
