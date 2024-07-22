@@ -78,7 +78,7 @@ fi
 shopt -s histappend
 HISTCONTROL=ignoreboth
 HISTFILESIZE=100000
-HISTIGNORE="?:??:vim:nvim:exit:pwd:clear:mount:umount:history"
+HISTIGNORE="?:??:fg ?:vim:nvim:exit:pwd:clear:mount:umount:history"
 HISTSIZE=10000
 
 # setup fzf if it is installed
