@@ -34,8 +34,6 @@ fi
 set -o ignoreeof
 set -o vi
 
-export HISTCONTROL=ignoreboth
-
 # Use bash-it if it is installed
 if [ -x $HOME/.bash_it/bash_it.sh ]; then
    # Path to the bash it configuration
