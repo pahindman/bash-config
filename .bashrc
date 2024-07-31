@@ -17,12 +17,12 @@ if [ -f /etc/bash.bashrc ]; then
 fi
 
 
-if [ -f /opt/local/etc/bash_completion ]; then
-   . /opt/local/etc/bash_completion
-fi
-
-if [ -f ~/macports/etc/profile.d/bash_completion.sh ]; then
-   . ~/macports/etc/profile.d/bash_completion.sh
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
 fi
 
 set -o ignoreeof
