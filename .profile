@@ -6,13 +6,8 @@
 # This file contains non-bash specific items that need to be done for a login
 # shell -- typically setting up the initial values for environment variables.
 export PATH
-# Add macports folders to the PATH
-PATH=~/macports/bin:~/macports/sbin:$PATH
+
 # Add my personal programs to the path
-PATH=~/.local/bin:$PATH
-
-PATH=/opt/nvim-linux64/bin:$PATH
-
 PATH=~/.local/bin:$PATH
 
 # CLICOLOR tells ls to use in its output.
