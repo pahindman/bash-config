@@ -34,18 +34,7 @@ fi
 set -o ignoreeof
 set -o vi
 
-# Use bash-it if it is installed
-if [ -x $HOME/.bash_it/bash_it.sh ]; then
-   # Path to the bash it configuration
-   export BASH_IT=$HOME/.bash_it
-
-   # Lock and Load a custom theme file
-   # location /.bash_it/themes/
-   export BASH_IT_THEME='phil'
-
-   # Load Bash It
-   . $BASH_IT/bash_it.sh
-elif [ -x $HOME/.git-prompt.sh ]; then
+if [ -x $HOME/.git-prompt.sh ]; then
    GIT_PS1_SHOWCOLORHINTS=yes
    GIT_PS1_SHOWDIRTYSTATE=yes
    GIT_PS1_DESCRIBE_STYLE=branch
