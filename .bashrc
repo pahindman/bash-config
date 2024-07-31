@@ -8,6 +8,12 @@
 # interactive shell.  E.g. setting up command line editing, history, and
 # completion.
 
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 # Source system-wide aliases and functions
 if [ -f /etc/bashrc ]; then
    . /etc/bashrc
