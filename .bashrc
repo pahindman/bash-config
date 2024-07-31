@@ -34,7 +34,7 @@ fi
 set -o ignoreeof
 set -o vi
 
-if [ -x $HOME/.git-prompt.sh ]; then
+if [ -f $HOME/.git-prompt.sh ]; then
    GIT_PS1_SHOWCOLORHINTS=yes
    GIT_PS1_SHOWDIRTYSTATE=yes
    GIT_PS1_DESCRIBE_STYLE=branch
