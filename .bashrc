@@ -88,6 +88,8 @@ HISTSIZE=10000
 
 # setup cargo if it is installed
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+# setup ghcup if it is installed
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
