@@ -83,7 +83,7 @@ HISTIGNORE="?:??:fg ?:vim:nvim:exit:pwd:clear:mount:umount:history"
 HISTSIZE=10000
 
 # setup fzf if it is installed
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
 
 # setup cargo if it is installed
