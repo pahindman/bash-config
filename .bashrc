@@ -15,26 +15,22 @@ case $- in
 esac
 
 # Source system-wide aliases and functions
-if [ -f /etc/bashrc ]; then
-   . /etc/bashrc
-fi
-if [ -f /etc/bash.bashrc ]; then
-   . /etc/bash.bashrc
-fi
+[ -f /etc/bashrc ] && source /etc/bashrc
+[ -f /etc/bash.bashrc ] && source /etc/bash.bashrc
 
 
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
+    source /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+    source /etc/bash_completion
   fi
 fi
 
 set -o ignoreeof
 set -o vi
 
-if [ -f $HOME/.git-prompt.sh ]; then
+if [ -f "$HOME/.git-prompt.sh" ]; then
    GIT_PS1_SHOWCOLORHINTS=yes
    GIT_PS1_SHOWDIRTYSTATE=yes
    GIT_PS1_DESCRIBE_STYLE=branch
@@ -42,7 +38,7 @@ if [ -f $HOME/.git-prompt.sh ]; then
    GIT_PS1_SHOWCONFLICTSTATE=yes
    GIT_PS1_SHOWSTASHSTATE=yes
    # Load the git prompt script
-   . $HOME/.git-prompt.sh
+   source "$HOME/.git-prompt.sh"
    PROMPT_COMMAND='__git_ps1 "" "\u@\h:\w\$ " "(%s) "'
 else
    case $OSTYPE in
@@ -53,15 +49,15 @@ fi
 
 # use dircolors to set LS_COLORS
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    [ -r ~/.dircolors ] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PROMPT_DIRTRIM=3
 export DISPLAY=:0
@@ -98,6 +94,4 @@ HISTSIZE=10000
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+[ -f "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
