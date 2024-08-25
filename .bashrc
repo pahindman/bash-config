@@ -85,6 +85,8 @@ HISTSIZE=10000
 # setup fzf if it is installed
 [ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
+# setup fzf-git if it is installed
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf-git/fzf-git.sh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf-git/fzf-git.sh
 
 # setup cargo if it is installed
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
