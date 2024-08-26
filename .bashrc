@@ -9,10 +9,7 @@
 # completion.
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[[ $- == *i* ]] || return
 
 # Source system-wide aliases and functions
 [ -f /etc/bashrc ] && source /etc/bashrc
