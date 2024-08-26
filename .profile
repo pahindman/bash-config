@@ -21,6 +21,14 @@ PATH=~/.local/bin:$PATH
 # CLICOLOR tells ls to use in its output.
 export CLICOLOR=1
 
+# use dircolors to set LS_COLORS
+if [ -x /usr/bin/dircolors ]; then
+    [ -r ~/.dircolors ] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
 export DISPLAY=:0
 
 if [ ! -d "$XDG_CONFIG_HOME" ]; then
