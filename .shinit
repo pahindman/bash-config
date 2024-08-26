@@ -4,6 +4,6 @@
 # $ENV.
 
 # I use this file to hold any non-bash specific items that I want done for every
-# interactive shell.  Values that we want to allow this shell instance might
+# interactive shell.  Variables that we want to allow this shell instance to
 # inherit from its parent should not be set here; default values for overridable
 # variables can be set in .profile.
