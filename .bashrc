@@ -6,7 +6,9 @@
 
 # I use this file to hold any bash specific items that I want done for every
 # interactive shell.  E.g. setting up command line editing, history, and
-# completion.
+# completion.  Values that this shell instance might inherit from its parent
+# should not be set here; default values can be set in .[bash_]profile.
+# Also explicity source $ENV, which is set in .profile.
 
 # If not running interactively, don't do anything
 [[ $- == *i* ]] || return
@@ -14,6 +16,9 @@
 # Source system-wide aliases and functions
 [ -r /etc/bashrc ] && source /etc/bashrc
 [ -r /etc/bash.bashrc ] && source /etc/bash.bashrc
+
+# Source bourne shell ENV file
+[ -r "$ENV" ] && source "$ENV"
 
 if ! shopt -oq posix; then
   if [ -r /usr/share/bash-completion/bash_completion ]; then

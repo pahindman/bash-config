@@ -5,6 +5,14 @@
 #
 # This file contains non-bash specific items that need to be done for a login
 # shell -- typically setting up the initial values for environment variables.
+# These default values can be overridden before executing subshells, and the
+# subshells will (typically) use the new values rather than these defaults
+# because they won't be login shells, so won't source this file.
+#
+# Commands that must be run even for non-login shells (for example, settings
+# that are not inherited) should be put in the file named by the ENV variable.
+ENV=$HOME/.shinit; export ENV
+
 export PATH
 
 # Add my personal programs to the path

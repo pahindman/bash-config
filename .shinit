@@ -1,0 +1,9 @@
+# .profile sets ENV to point at this file, which means that it will get sourced
+# when the 'sh' is interactive.  Bash normally only sources ENV when it is in
+# 'posix' mode or has been invoked as 'sh', but my .bashrc will always source
+# $ENV.
+
+# I use this file to hold any non-bash specific items that I want done for every
+# interactive shell.  Values that we want to allow this shell instance might
+# inherit from its parent should not be set here; default values for overridable
+# variables can be set in .profile.
