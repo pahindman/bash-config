@@ -6,11 +6,11 @@
 
 # first, source the .profile script, which is the corresponding startup file
 # used when bash is started as sh, and so contains non-bash-specific items
-[ -f "$HOME/.profile" ] && source "$HOME/.profile"
+[ -r "$HOME/.profile" ] && source "$HOME/.profile"
 
 # then source .bashrc (which bash only does automatically
 # for interactive non-login shells)
-[[ $- == *i* ]] && [ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
+[[ $- == *i* ]] && [ -r "$HOME/.bashrc" ] && source "$HOME/.bashrc"
 
 export PYENV_ROOT="$HOME/.pyenv"
 [ -d "$PYENV_ROOT/bin" ] && export PATH="$PYENV_ROOT/bin:$PATH"

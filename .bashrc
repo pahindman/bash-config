@@ -12,14 +12,13 @@
 [[ $- == *i* ]] || return
 
 # Source system-wide aliases and functions
-[ -f /etc/bashrc ] && source /etc/bashrc
-[ -f /etc/bash.bashrc ] && source /etc/bash.bashrc
-
+[ -r /etc/bashrc ] && source /etc/bashrc
+[ -r /etc/bash.bashrc ] && source /etc/bash.bashrc
 
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
+  if [ -r /usr/share/bash-completion/bash_completion ]; then
     source /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
+  elif [ -r /etc/bash_completion ]; then
     source /etc/bash_completion
   fi
 fi
@@ -27,7 +26,7 @@ fi
 set -o ignoreeof
 set -o vi
 
-if [ -f "$HOME/.git-prompt.sh" ]; then
+if [ -r "$HOME/.git-prompt.sh" ]; then
    GIT_PS1_SHOWCOLORHINTS=yes
    GIT_PS1_SHOWDIRTYSTATE=yes
    GIT_PS1_DESCRIBE_STYLE=branch
@@ -76,19 +75,19 @@ HISTIGNORE="?:??:fg ?:vim:nvim:exit:pwd:clear:mount:umount:history"
 HISTSIZE=10000
 
 # setup fzf if it is installed
-[ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
+[ -r "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
+[ -r "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.bash" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.bash"
 # setup fzf-git if it is installed
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf-git/fzf-git.sh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf-git/fzf-git.sh
+[ -r "${XDG_CONFIG_HOME:-$HOME/.config}/fzf-git/fzf-git.sh" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/fzf-git/fzf-git.sh"
 
 # setup cargo if it is installed
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+[ -r "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 # setup ghcup if it is installed
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+[ -r "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-[ -f "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
+[ -r "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
