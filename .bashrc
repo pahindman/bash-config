@@ -31,14 +31,6 @@ fi
 set -o ignoreeof
 set -o vi
 
-# use dircolors to set LS_COLORS
-if [ -x /usr/bin/dircolors ]; then
-    [ -r ~/.dircolors ] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 shopt -s histappend
 
 [ -r "${XDG_CONFIG_HOME}/fzf/fzf.bash" ] && source "${XDG_CONFIG_HOME}/fzf/fzf.bash"
