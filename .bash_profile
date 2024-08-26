@@ -12,8 +12,8 @@
 # for interactive non-login shells)
 [[ $- == *i* ]] && [ -r "$HOME/.bashrc" ] && source "$HOME/.bashrc"
 
-export PYENV_ROOT="$HOME/.pyenv"
-[ -d "$PYENV_ROOT/bin" ] && export PATH="$PYENV_ROOT/bin:$PATH"
+PYENV_ROOT="$HOME/.pyenv"
+[ -d "$PYENV_ROOT/bin" ] && PATH="$PYENV_ROOT/bin:$PATH"
 type pyenv &>/dev/null && eval "$(pyenv init -)"
 
 # finally, do any other bash specific items
