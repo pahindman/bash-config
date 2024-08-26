@@ -28,9 +28,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-set -o ignoreeof
-set -o vi
-
 shopt -s histappend
 
 [ -r "${XDG_CONFIG_HOME}/fzf/fzf.bash" ] && source "${XDG_CONFIG_HOME}/fzf/fzf.bash"
