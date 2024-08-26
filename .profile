@@ -42,3 +42,6 @@ elif type vim &> /dev/null; then
    export EDITOR=vim
    export VISUAL=vim
 fi
+
+[ -r "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+[ -r "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
