@@ -41,7 +41,6 @@ fi
 
 shopt -s histappend
 
-[ -r "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
 [ -r "$HOME/.git-prompt.sh" ] && source "$HOME/.git-prompt.sh"
 [ -r "${XDG_CONFIG_HOME}/fzf/fzf.bash" ] && source "${XDG_CONFIG_HOME}/fzf/fzf.bash"
 [ -r "${XDG_CONFIG_HOME}/fzf-git/fzf-git.sh" ] && source "${XDG_CONFIG_HOME}/fzf-git/fzf-git.sh"
