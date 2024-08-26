@@ -23,6 +23,10 @@ export CLICOLOR; CLICOLOR=1
 
 export DISPLAY=:0
 
+if [ ! -d "$XDG_CONFIG_HOME" ]; then
+  export XDG_CONFIG_HOME="$HOME/.config"
+fi
+
 if type nvim &> /dev/null; then
    export EDITOR=nvim
    export VISUAL=nvim

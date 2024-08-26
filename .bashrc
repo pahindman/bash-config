@@ -68,8 +68,8 @@ HISTIGNORE="?:??:fg ?:vim:nvim:exit:pwd:clear:mount:umount:history"
 HISTSIZE=10000
 
 [ -r "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
-[ -r "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.bash" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.bash"
-[ -r "${XDG_CONFIG_HOME:-$HOME/.config}/fzf-git/fzf-git.sh" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/fzf-git/fzf-git.sh"
+[ -r "${XDG_CONFIG_HOME}/fzf/fzf.bash" ] && source "${XDG_CONFIG_HOME}/fzf/fzf.bash"
+[ -r "${XDG_CONFIG_HOME}/fzf-git/fzf-git.sh" ] && source "${XDG_CONFIG_HOME}/fzf-git/fzf-git.sh"
 [ -r "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 [ -r "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 [ -r "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
