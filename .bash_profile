@@ -31,3 +31,7 @@ NVM_DIR="$HOME/.nvm"
 
 export PROMPT_DIRTRIM=3
 
+export HISTCONTROL=ignoreboth
+export HISTFILESIZE=100000
+export HISTIGNORE="?:??:fg ?:vim:nvim:exit:pwd:clear:mount:umount:history"
+export HISTSIZE=10000

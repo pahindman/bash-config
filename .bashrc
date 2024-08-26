@@ -57,10 +57,6 @@ fi
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 shopt -s histappend
-HISTCONTROL=ignoreboth
-HISTFILESIZE=100000
-HISTIGNORE="?:??:fg ?:vim:nvim:exit:pwd:clear:mount:umount:history"
-HISTSIZE=10000
 
 [ -r "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
 [ -r "${XDG_CONFIG_HOME}/fzf/fzf.bash" ] && source "${XDG_CONFIG_HOME}/fzf/fzf.bash"
