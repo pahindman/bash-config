@@ -31,23 +31,6 @@ fi
 set -o ignoreeof
 set -o vi
 
-if [ -r "$HOME/.git-prompt.sh" ]; then
-   GIT_PS1_SHOWCOLORHINTS=yes
-   GIT_PS1_SHOWDIRTYSTATE=yes
-   GIT_PS1_DESCRIBE_STYLE=branch
-   GIT_PS1_SHOWUPSTREAM=auto
-   GIT_PS1_SHOWCONFLICTSTATE=yes
-   GIT_PS1_SHOWSTASHSTATE=yes
-   # Load the git prompt script
-   source "$HOME/.git-prompt.sh"
-   PROMPT_COMMAND='__git_ps1 "" "\u@\h:\w\$ " "(%s) "'
-else
-   case $OSTYPE in
-      cygwin) PS1="\\!:\\w\\$ ";;
-      *) PS1="\!:\u@\h:\W\$ ";;
-   esac
-fi
-
 # use dircolors to set LS_COLORS
 if [ -x /usr/bin/dircolors ]; then
     [ -r ~/.dircolors ] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -59,6 +42,7 @@ fi
 shopt -s histappend
 
 [ -r "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
+[ -r "$HOME/.git-prompt.sh" ] && source "$HOME/.git-prompt.sh"
 [ -r "${XDG_CONFIG_HOME}/fzf/fzf.bash" ] && source "${XDG_CONFIG_HOME}/fzf/fzf.bash"
 [ -r "${XDG_CONFIG_HOME}/fzf-git/fzf-git.sh" ] && source "${XDG_CONFIG_HOME}/fzf-git/fzf-git.sh"
 [ -r "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
