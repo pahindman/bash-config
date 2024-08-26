@@ -14,6 +14,6 @@
 
 export PYENV_ROOT="$HOME/.pyenv"
 [ -d "$PYENV_ROOT/bin" ] && export PATH="$PYENV_ROOT/bin:$PATH"
-[ -d "$PYENV_ROOT/bin" ] && eval "$(pyenv init -)"
+type pyenv &>/dev/null && eval "$(pyenv init -)"
 
 # finally, do any other bash specific items
