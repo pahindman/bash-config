@@ -20,3 +20,13 @@ PATH=~/.local/bin:$PATH
 
 # CLICOLOR tells ls to use in its output.
 export CLICOLOR; CLICOLOR=1
+
+export DISPLAY=:0
+
+if type nvim &> /dev/null; then
+   export EDITOR=nvim
+   export VISUAL=nvim
+elif type vim &> /dev/null; then
+   export EDITOR=vim
+   export VISUAL=vim
+fi

@@ -61,16 +61,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PROMPT_DIRTRIM=3
-export DISPLAY=:0
-
-if type nvim &> /dev/null; then
-   export EDITOR=nvim
-   export VISUAL=nvim
-elif type vim &> /dev/null; then
-   export EDITOR=vim
-   export VISUAL=vim
-fi
-
 shopt -s histappend
 HISTCONTROL=ignoreboth
 HISTFILESIZE=100000
