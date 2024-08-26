@@ -58,8 +58,6 @@ export NVM_DIR="$HOME/.nvm"
 export PROMPT_DIRTRIM=3
 export DISPLAY=:0
 
-# If nvim is installed, use it as the default editor
-# Otherwise, use vim if it is installed
 if type nvim &> /dev/null; then
    export EDITOR=nvim
    export VISUAL=nvim
@@ -74,20 +72,9 @@ HISTFILESIZE=100000
 HISTIGNORE="?:??:fg ?:vim:nvim:exit:pwd:clear:mount:umount:history"
 HISTSIZE=10000
 
-# setup fzf if it is installed
 [ -r "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
 [ -r "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.bash" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.bash"
-# setup fzf-git if it is installed
 [ -r "${XDG_CONFIG_HOME:-$HOME/.config}/fzf-git/fzf-git.sh" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/fzf-git/fzf-git.sh"
-
-# setup cargo if it is installed
 [ -r "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
-# setup ghcup if it is installed
 [ -r "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 [ -r "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
