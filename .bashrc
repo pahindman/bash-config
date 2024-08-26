@@ -56,7 +56,6 @@ fi
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-export PROMPT_DIRTRIM=3
 shopt -s histappend
 HISTCONTROL=ignoreboth
 HISTFILESIZE=100000
