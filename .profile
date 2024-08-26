@@ -19,7 +19,7 @@ export PATH
 PATH=~/.local/bin:$PATH
 
 # CLICOLOR tells ls to use in its output.
-export CLICOLOR; CLICOLOR=1
+export CLICOLOR=1
 
 export DISPLAY=:0
 
