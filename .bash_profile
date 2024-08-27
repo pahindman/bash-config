@@ -15,11 +15,7 @@
 # used when bash is started as sh, and so contains non-bash-specific items
 [ -r "$HOME/.profile" ] && source "$HOME/.profile"
 
-# then source .bashrc (which bash only does automatically
-# for interactive non-login shells)
-[[ $- == *i* ]] && [ -r "$HOME/.bashrc" ] && source "$HOME/.bashrc"
-
-# finally, do any other bash specific items
+# then do bash specific items
 
 PYENV_ROOT="$HOME/.pyenv"
 [ -d "$PYENV_ROOT/bin" ] && PATH="$PYENV_ROOT/bin:$PATH"
@@ -50,3 +46,7 @@ export HISTCONTROL=ignoreboth
 export HISTFILESIZE=100000
 export HISTIGNORE="?:??:fg ?:vim:nvim:exit:pwd:clear:mount:umount:history"
 export HISTSIZE=10000
+
+# finally, source .bashrc if this is an interactive shell
+# (bash only does this automatically for interactive non-login shells)
+[[ $- == *i* ]] && [ -r "$HOME/.bashrc" ] && source "$HOME/.bashrc"
