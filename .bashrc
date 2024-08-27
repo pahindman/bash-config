@@ -13,12 +13,12 @@
 # If not running interactively, don't do anything
 [[ $- == *i* ]] || return
 
+# First, source bourne shell ENV file
+[ -r "$ENV" ] && source "$ENV"
+
 # Source system-wide aliases and functions
 [ -r /etc/bashrc ] && source /etc/bashrc
 [ -r /etc/bash.bashrc ] && source /etc/bash.bashrc
-
-# Source bourne shell ENV file
-[ -r "$ENV" ] && source "$ENV"
 
 if ! shopt -oq posix; then
   if [ -r /usr/share/bash-completion/bash_completion ]; then
