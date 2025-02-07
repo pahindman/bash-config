@@ -9,9 +9,6 @@
 # subshells will (typically) use the new values rather than these defaults
 # because they won't be login shells, so won't source this file.
 
-# Add my personal programs to the path
-export PATH=~/.local/bin:$PATH
-
 if [ ! -d "$XDG_CONFIG_HOME" ]; then
   export XDG_CONFIG_HOME="$HOME/.config"
 fi
@@ -24,8 +21,19 @@ elif type vim &> /dev/null; then
    export VISUAL=vim
 fi
 
-# Enable the following tools in the current shell if they are available
-[ -r "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-[ -r "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
-[ -r "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
-[ -r "$XDG_CONFIG_HOME/nvm/nvm.sh" ] && . "$XDG_CONFIG_HOME/nvm/nvm.sh"
+# Ensure that these are only set once in the session login shell, not in subshells,
+# even if the subshell is a login shell.  Subshells are sometimes login shells under
+# systemd or gnome-shell, for example, and we don't want to do these things multiple
+# times (e.g. appending a value to the PATH).
+if [ ! -v SH_PROFILE_SOURCED ]; then
+	export SH_PROFILE_SOURCED=1
+
+	# Add my personal programs to the path
+	export PATH=~/.local/bin:$PATH
+
+	# Enable the following tools in the current shell if they are available
+	[ -r "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+	[ -r "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
+	[ -r "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
+	[ -r "$XDG_CONFIG_HOME/nvm/nvm.sh" ] && . "$XDG_CONFIG_HOME/nvm/nvm.sh"
+fi

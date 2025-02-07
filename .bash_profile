@@ -15,10 +15,16 @@
 # used when bash is started as sh, and so contains non-bash-specific items
 [ -r "$HOME/.profile" ] && source "$HOME/.profile"
 
-# then do bash specific items
+# Ensure that these are only set once in the session login shell, not in subshells,
+# even if the subshell is a login shell.  Subshells are sometimes login shells under
+# systemd or gnome-shell, for example, and we don't want to do these things multiple
+# times (e.g. appending a value to the PATH).
+if [ ! -v BASH_PROFILE_SOURCED ]; then
+	export BASH_PROFILE_SOURCED=1
 
-[ -d "$HOME/.pyenv/bin" ] && PATH="$HOME/.pyenv/bin:$PATH"
-type pyenv &>/dev/null && eval "$(pyenv init -)"
+	[ -d "$HOME/.pyenv/bin" ] && PATH="$HOME/.pyenv/bin:$PATH"
+	type pyenv &>/dev/null && eval "$(pyenv init -)"
+fi
 
 # finally, source .bashrc if this is an interactive shell
 # (bash only does this automatically for interactive non-login shells)
