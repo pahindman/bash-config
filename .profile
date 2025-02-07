@@ -23,7 +23,11 @@ export CLICOLOR=1
 
 # use dircolors to set LS_COLORS
 if [ -x /usr/bin/dircolors ]; then
-    [ -r ~/.dircolors ] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    if [ -r ~/.dircolors ]; then
+		eval "$(dircolors -b ~/.dircolors)"
+	else
+		eval "$(dircolors -b)"
+	fi
 fi
 
 # make less more friendly for non-text input files, see lesspipe(1)
