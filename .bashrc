@@ -31,7 +31,7 @@ fi
 shopt -s histappend
 
 # Enable the following tools in the current shell if they are available
-[ -r "${XDG_CONFIG_HOME}/fzf/fzf.bash" ] && source "${XDG_CONFIG_HOME}/fzf/fzf.bash"
-[ -r "${XDG_CONFIG_HOME}/fzf-git/fzf-git.sh" ] && source "${XDG_CONFIG_HOME}/fzf-git/fzf-git.sh"
+[ -r "$XDG_CONFIG_HOME/fzf/fzf.bash" ] && source "$XDG_CONFIG_HOME/fzf/fzf.bash"
+[ -r "$XDG_CONFIG_HOME/fzf-git/fzf-git.sh" ] && source "$XDG_CONFIG_HOME/fzf-git/fzf-git.sh"
 [ -r "$HOME/.git-prompt.sh" ] && source "$HOME/.git-prompt.sh"
 [ -r "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
