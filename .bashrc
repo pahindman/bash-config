@@ -28,6 +28,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+[ -r "$HOME/.nvm/bash_completion" ] && source "$HOME/.nvm/bash_completion"
+
 shopt -s histappend
 
 # Enable the following tools in the current shell if they are available

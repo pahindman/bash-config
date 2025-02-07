@@ -20,8 +20,6 @@
 [ -d "$HOME/.pyenv/bin" ] && PATH="$HOME/.pyenv/bin:$PATH"
 type pyenv &>/dev/null && eval "$(pyenv init -)"
 
-[ -r "$HOME/.nvm/bash_completion" ] && source "$HOME/.nvm/bash_completion"
-
 export PROMPT_DIRTRIM=3
 
 if [ -r "$HOME/.git-prompt.sh" ]; then
