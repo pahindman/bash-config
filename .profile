@@ -45,5 +45,8 @@ elif type vim &> /dev/null; then
    export VISUAL=vim
 fi
 
-[ -r "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
-[ -r "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+# Enable the following tools in the current shell if they are available
+[ -r "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+[ -r "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
+[ -r "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
+[ -r "$XDG_CONFIG_HOME/nvm/nvm.sh" ] && . "$XDG_CONFIG_HOME/nvm/nvm.sh"
