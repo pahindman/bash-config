@@ -22,20 +22,6 @@ type pyenv &>/dev/null && eval "$(pyenv init -)"
 
 export PROMPT_DIRTRIM=3
 
-if [ -r "$HOME/.git-prompt.sh" ]; then
-	export GIT_PS1_SHOWCOLORHINTS=yes
-	export GIT_PS1_SHOWDIRTYSTATE=yes
-	export GIT_PS1_DESCRIBE_STYLE=branch
-	export GIT_PS1_SHOWUPSTREAM=auto
-	export GIT_PS1_SHOWCONFLICTSTATE=yes
-	export GIT_PS1_SHOWSTASHSTATE=yes
-	export PROMPT_COMMAND='__git_ps1 "" "\u@\h:\w\$ " "(%s) "'
-else
-	case $OSTYPE in
-		cygwin) export PS1="\\!:\\w\\$ ";;
-		*) export PS1="\!:\u@\h:\W\$ ";;
-	esac
-fi
 
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=100000
