@@ -21,9 +21,7 @@ PYENV_ROOT="$HOME/.pyenv"
 [ -d "$PYENV_ROOT/bin" ] && PATH="$PYENV_ROOT/bin:$PATH"
 type pyenv &>/dev/null && eval "$(pyenv init -)"
 
-NVM_DIR="$HOME/.nvm"
-[ -r "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-[ -r "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+[ -r "$HOME/.nvm/bash_completion" ] && source "$HOME/.nvm/bash_completion"
 
 export PROMPT_DIRTRIM=3
 
