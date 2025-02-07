@@ -32,8 +32,23 @@ fi
 
 shopt -s histappend
 
+if [ -r "$HOME/.git-prompt.sh" ]; then
+	GIT_PS1_SHOWCOLORHINTS=yes
+	GIT_PS1_SHOWDIRTYSTATE=yes
+	GIT_PS1_DESCRIBE_STYLE=branch
+	GIT_PS1_SHOWUPSTREAM=auto
+	GIT_PS1_SHOWCONFLICTSTATE=yes
+	GIT_PS1_SHOWSTASHSTATE=yes
+	PROMPT_COMMAND=('__git_ps1 "" "\u@\h:\w\$ " "(%s) "')
+	source "$HOME/.git-prompt.sh"
+else
+	case $OSTYPE in
+		cygwin) PS1="\\!:\\w\\$ ";;
+		*) PS1="\!:\u@\h:\W\$ ";;
+	esac
+fi
+
 # Enable the following tools in the current shell if they are available
 [ -r "$XDG_CONFIG_HOME/fzf/fzf.bash" ] && source "$XDG_CONFIG_HOME/fzf/fzf.bash"
 [ -r "$XDG_CONFIG_HOME/fzf-git/fzf-git.sh" ] && source "$XDG_CONFIG_HOME/fzf-git/fzf-git.sh"
-[ -r "$HOME/.git-prompt.sh" ] && source "$HOME/.git-prompt.sh"
 [ -r "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
