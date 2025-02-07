@@ -17,8 +17,7 @@
 
 # then do bash specific items
 
-PYENV_ROOT="$HOME/.pyenv"
-[ -d "$PYENV_ROOT/bin" ] && PATH="$PYENV_ROOT/bin:$PATH"
+[ -d "$HOME/.pyenv/bin" ] && PATH="$HOME/.pyenv/bin:$PATH"
 type pyenv &>/dev/null && eval "$(pyenv init -)"
 
 [ -r "$HOME/.nvm/bash_completion" ] && source "$HOME/.nvm/bash_completion"
