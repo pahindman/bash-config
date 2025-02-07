@@ -1,10 +1,11 @@
-# .profile sets ENV to point at this file, which means that it will get sourced
-# when the 'sh' is interactive.  Bash normally only sources ENV when it is in
-# 'posix' mode or has been invoked as 'sh', but my .bashrc will always source
-# $ENV.
+# .profile sets ENV to point at this file, which means that this file will get
+# sourced when the 'sh' is interactive.  Bash normally only sources ENV when it
+# is in 'posix' mode or has been invoked as 'sh', but my .bashrc will always
+# source $ENV.
 
 # I use this file to hold any non-bash specific items that I want done for every
-# interactive shell.  Variables that we want to allow this shell instance to
+# interactive shell, even non-login shells.  For example, settings that cannot or
+# should not be inherited.  Variables that I want to allow this shell instance to
 # inherit from its parent should not be set here; default values for overridable
 # variables can be set in .profile.
 
