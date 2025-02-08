@@ -8,10 +8,6 @@
 # These default values can be overridden before executing subshells, and the
 # subshells will (typically) use the new values rather than these defaults
 # because they won't be login shells, so won't source this file.
-#
-# Commands that must be run even for non-login shells (for example, settings
-# that are not inherited) should be put in the file named by the ENV variable.
-ENV=$HOME/.shinit; export ENV
 
 # Add my personal programs to the path
 export PATH=~/.local/bin:$PATH

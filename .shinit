@@ -1,7 +1,7 @@
-# .profile sets ENV to point at this file, which means that this file will get
-# sourced when the 'sh' is interactive.  Bash normally only sources ENV when it
-# is in 'posix' mode or has been invoked as 'sh', but my .bashrc will always
-# source $ENV.
+# .pam_environment sets ENV to point at this file, which means that this file
+# will get sourced when the 'sh' is interactive.  Bash normally only sources ENV
+# when it is in 'posix' mode or has been invoked as 'sh', but my .bashrc will
+# always source $ENV.
 
 # I use this file to hold any non-bash specific items that I want done for every
 # interactive shell, even non-login shells.  For example, settings that cannot or
