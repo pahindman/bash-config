@@ -10,15 +10,15 @@
 # because they won't be login shells, so won't source this file.
 
 if [ ! -d "$XDG_CONFIG_HOME" ]; then
-  export XDG_CONFIG_HOME="$HOME/.config"
+	export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
 if type nvim &> /dev/null; then
-   export EDITOR=nvim
-   export VISUAL=nvim
+	export EDITOR=nvim
+	export VISUAL=nvim
 elif type vim &> /dev/null; then
-   export EDITOR=vim
-   export VISUAL=vim
+	export EDITOR=vim
+	export VISUAL=vim
 fi
 
 # Ensure that these are only set once in the session login shell, not in subshells,
