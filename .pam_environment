@@ -1,0 +1,3 @@
+# Point to the default shell init file for 'sh'
+# My .bashrc sources this file
+ENV DEFAULT=@{HOME}/.shinit

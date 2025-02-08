@@ -8,7 +8,7 @@
 # interactive shell.  E.g. setting up command line editing, history, and
 # completion.  Values that this shell instance might inherit from its parent
 # should not be set here; default values can be set in .[bash_]profile.
-# Also explicity source $ENV, which is set in .profile.
+# Also explicity source $ENV.
 
 # If not running interactively, don't do anything
 [[ $- == *i* ]] || return
