@@ -13,10 +13,8 @@
 # that are not inherited) should be put in the file named by the ENV variable.
 ENV=$HOME/.shinit; export ENV
 
-export PATH
-
 # Add my personal programs to the path
-PATH=~/.local/bin:$PATH
+export PATH=~/.local/bin:$PATH
 
 if [ ! -d "$XDG_CONFIG_HOME" ]; then
   export XDG_CONFIG_HOME="$HOME/.config"
