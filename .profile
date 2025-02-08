@@ -18,21 +18,6 @@ export PATH
 # Add my personal programs to the path
 PATH=~/.local/bin:$PATH
 
-# CLICOLOR tells ls to use in its output.
-export CLICOLOR=1
-
-# use dircolors to set LS_COLORS
-if [ -x /usr/bin/dircolors ]; then
-    if [ -r ~/.dircolors ]; then
-		eval "$(dircolors -b ~/.dircolors)"
-	else
-		eval "$(dircolors -b)"
-	fi
-fi
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 if [ ! -d "$XDG_CONFIG_HOME" ]; then
   export XDG_CONFIG_HOME="$HOME/.config"
 fi
