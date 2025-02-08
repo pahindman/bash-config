@@ -30,6 +30,12 @@ fi
 
 [ -r "$HOME/.nvm/bash_completion" ] && source "$HOME/.nvm/bash_completion"
 
+PROMPT_DIRTRIM=3
+
+HISTCONTROL=ignoreboth
+HISTFILESIZE=100000
+HISTIGNORE="?:??:fg ?:vim:nvim:exit:pwd:clear:mount:umount:history"
+HISTSIZE=10000
 shopt -s histappend
 
 if [ -r "$HOME/.git-prompt.sh" ]; then

@@ -20,14 +20,6 @@
 [ -d "$HOME/.pyenv/bin" ] && PATH="$HOME/.pyenv/bin:$PATH"
 type pyenv &>/dev/null && eval "$(pyenv init -)"
 
-export PROMPT_DIRTRIM=3
-
-
-export HISTCONTROL=ignoreboth
-export HISTFILESIZE=100000
-export HISTIGNORE="?:??:fg ?:vim:nvim:exit:pwd:clear:mount:umount:history"
-export HISTSIZE=10000
-
 # finally, source .bashrc if this is an interactive shell
 # (bash only does this automatically for interactive non-login shells)
 [[ $- == *i* ]] && [ -r "$HOME/.bashrc" ] && source "$HOME/.bashrc"
