@@ -14,8 +14,8 @@ export CLICOLOR=1
 
 # use dircolors to set LS_COLORS
 if [ -x /usr/bin/dircolors ]; then
-	if [ -r ~/.dircolors ]; then
-		eval "$(dircolors -b ~/.dircolors)"
+	if [ -r ~/.dir_colors ]; then
+		eval "$(dircolors -b ~/.dir_colors)"
 	else
 		eval "$(dircolors -b)"
 	fi
