@@ -34,6 +34,7 @@ PROMPT_DIRTRIM=3
 
 HISTCONTROL=ignoreboth
 HISTFILESIZE=unlimited
+HISTTIMEFORMAT="%F_%T "
 HISTIGNORE="?:??:fg ?:vim:nvim:exit:pwd:clear:mount:umount:history"
 HISTSIZE=10000
 shopt -s histappend
