@@ -23,7 +23,6 @@ if [ ! -v BASH_PROFILE_SOURCED ]; then
 	export BASH_PROFILE_SOURCED=1
 
 	[ -d "$HOME/.pyenv/bin" ] && PATH="$HOME/.pyenv/bin:$PATH"
-	type pyenv &>/dev/null && eval "$(pyenv init -)"
 fi
 
 # finally, source .bashrc if this is an interactive shell
