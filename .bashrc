@@ -38,6 +38,7 @@ HISTTIMEFORMAT="%F_%T "
 HISTIGNORE="?:??:fg ?:vim:nvim:exit:pwd:clear:mount:umount:history"
 HISTSIZE=10000
 shopt -s histappend
+PROMPT_COMMAND+=('history -a')
 
 if [ -r "$HOME/.git-prompt.sh" ]; then
 	GIT_PS1_SHOWCOLORHINTS=yes
@@ -46,7 +47,7 @@ if [ -r "$HOME/.git-prompt.sh" ]; then
 	GIT_PS1_SHOWUPSTREAM=auto
 	GIT_PS1_SHOWCONFLICTSTATE=yes
 	GIT_PS1_SHOWSTASHSTATE=yes
-	PROMPT_COMMAND=('__git_ps1 "" "\u@\h:\w\$ " "(%s) "')
+	PROMPT_COMMAND+=('__git_ps1 "" "\u@\h:\w\$ " "(%s) "')
 	source "$HOME/.git-prompt.sh"
 else
 	case $OSTYPE in
