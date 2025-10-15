@@ -32,12 +32,12 @@ fi
 if [ ! -v SH_PROFILE_SOURCED ]; then
 	export SH_PROFILE_SOURCED=1
 
-	# Add my personal programs to the path
-	export PATH=~/.local/bin:$PATH
-
 	# Enable the following tools in the current shell if they are available
 	[ -r "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 	[ -r "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
 	[ -r "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
 	[ -r "$XDG_CONFIG_HOME/nvm/nvm.sh" ] && . "$XDG_CONFIG_HOME/nvm/nvm.sh"
+
+	# Add my personal programs to the path
+	export PATH=~/.local/bin:$PATH
 fi
