@@ -38,7 +38,7 @@ HISTTIMEFORMAT="%F_%T "
 HISTIGNORE="?:??:fg *:vim:nvim:exit:pwd:clear:mount:umount:history"
 HISTSIZE=10000
 shopt -s histappend
-PROMPT_COMMAND=('history -a')
+PROMPT_COMMAND+=('history -a')
 
 if [ -r "$HOME/.git-prompt.sh" ]; then
 	GIT_PS1_SHOWCOLORHINTS=yes
