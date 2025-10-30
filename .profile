@@ -37,6 +37,7 @@ if [ ! -v SH_PROFILE_SOURCED ]; then
 	[ -r "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
 	[ -r "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
 	[ -r "$XDG_CONFIG_HOME/nvm/nvm.sh" ] && . "$XDG_CONFIG_HOME/nvm/nvm.sh"
+	[ -r "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
 
 	# Add my personal programs to the path
 	export PATH=~/.local/bin:$PATH

@@ -71,3 +71,4 @@ else
 	[ -r "$XDG_CONFIG_HOME/fzf/fzf.bash" ] && source "$XDG_CONFIG_HOME/fzf/fzf.bash"
 	[ -r "$XDG_CONFIG_HOME/fzf-git/fzf-git.sh" ] && source "$XDG_CONFIG_HOME/fzf-git/fzf-git.sh"
 fi
+type atuin &>/dev/null && eval "$(atuin init bash --disable-up-arrow)"
