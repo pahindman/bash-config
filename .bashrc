@@ -13,6 +13,9 @@
 # If not running interactively, don't do anything
 [[ $- == *i* ]] || return
 
+# Source blesh for better line editing (if available)
+[ -r "$HOME/.local/share/blesh/ble.sh" ] && source -- "$HOME/.local/share/blesh/ble.sh" --attach=none
+
 # First, source bourne shell ENV file
 [ -r "$ENV" ] && source "$ENV"
 
@@ -60,7 +63,11 @@ fi
 FZF_CTRL_R_OPTS=$'--bind ctrl-/:toggle-wrap --wrap-sign "\t↳ "'
 
 # Enable the following tools in the current shell if they are available
-[ -r "$XDG_CONFIG_HOME/fzf/fzf.bash" ] && source "$XDG_CONFIG_HOME/fzf/fzf.bash"
-[ -r "$XDG_CONFIG_HOME/fzf-git/fzf-git.sh" ] && source "$XDG_CONFIG_HOME/fzf-git/fzf-git.sh"
 type pyenv &>/dev/null && eval "$(pyenv init -)"
 [ -r "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
+if [ -r "$HOME/.local/share/blesh/ble.sh" ]; then
+	source "$HOME/.local/share/blesh/ble.sh"
+else
+	[ -r "$XDG_CONFIG_HOME/fzf/fzf.bash" ] && source "$XDG_CONFIG_HOME/fzf/fzf.bash"
+	[ -r "$XDG_CONFIG_HOME/fzf-git/fzf-git.sh" ] && source "$XDG_CONFIG_HOME/fzf-git/fzf-git.sh"
+fi
