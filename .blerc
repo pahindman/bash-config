@@ -1,5 +1,8 @@
 # shellcheck shell=bash
-# In core-decode.vi_nmap.rlfunc.txt change vi_nmap/downcase-eword to downcase-eword
+# When updating ble.sh, this file:
+# 	~/.local/share/blesh/contrib/integration/fzf-completion.bash
+# needs to be updated to add the s/builtin printf/printf/ command, like below:
+#	ble/util/eval-stdout '"$_ble_contrib_fzf_path" --bash | sed "s/builtin printf/printf/g" | sed -n "/### completion/,/### end/p"'
 
 function blerc/vim-load-hook {
 	bleopt keymap_vi_mode_show=
