@@ -24,11 +24,11 @@
 [ -r /etc/bash.bashrc ] && source /etc/bash.bashrc
 
 if ! shopt -oq posix; then
-  if [ -r /usr/share/bash-completion/bash_completion ]; then
-    source /usr/share/bash-completion/bash_completion
-  elif [ -r /etc/bash_completion ]; then
-    source /etc/bash_completion
-  fi
+	if [ -r /usr/share/bash-completion/bash_completion ]; then
+		source /usr/share/bash-completion/bash_completion
+	elif [ -r /etc/bash_completion ]; then
+		source /etc/bash_completion
+	fi
 fi
 
 [ -r "$HOME/.nvm/bash_completion" ] && source "$HOME/.nvm/bash_completion"
@@ -54,8 +54,8 @@ if [ -r "$HOME/.git-prompt.sh" ]; then
 	source "$HOME/.git-prompt.sh"
 else
 	case $OSTYPE in
-		cygwin) PS1="\\!:\\w\\$ ";;
-		*) PS1="\!:\u@\h:\W\$ ";;
+	cygwin) PS1="\\!:\\w\\$ " ;;
+	*) PS1="\!:\u@\h:\W\$ " ;;
 	esac
 fi
 
