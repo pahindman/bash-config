@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # In core-decode.vi_nmap.rlfunc.txt change vi_nmap/downcase-eword to downcase-eword
 
 function blerc/vim-load-hook {

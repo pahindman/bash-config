@@ -1,3 +1,5 @@
+# shellcheck shell=sh
+# shellcheck source=/dev/null
 # The Bourne Shell (or bash when it invoked with the name 'sh') sources
 # ~/.profile when it is started as an interactive login shell, or when started
 # with --login.  In addition, .bash_profile, which is the corresponding file
@@ -17,10 +19,10 @@ if [ ! -d "$XDG_DATA_HOME" ]; then
 	export XDG_DATA_HOME="$HOME/.local/share"
 fi
 
-if type nvim &> /dev/null; then
+if type nvim >/dev/null 2>&1; then
 	export EDITOR=nvim
 	export VISUAL=nvim
-elif type vim &> /dev/null; then
+elif type vim >/dev/null 2>&1; then
 	export EDITOR=vim
 	export VISUAL=vim
 fi
@@ -33,6 +35,6 @@ fi
 [ -r "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
 
 # If local bin dir is not in path then add it
-if [ "${PATH#*$HOME/.local/bin}" == "${PATH}" ]; then
-	export PATH=$HOME/.local/bin:$PATH
+if [ "${PATH#*"$HOME"/.local/bin}" = "${PATH}" ]; then
+	export PATH="$HOME"/.local/bin:"$PATH"
 fi

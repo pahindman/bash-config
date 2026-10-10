@@ -1,3 +1,4 @@
+# shellcheck shell=sh
 # .pam_environment sets ENV to point at this file, which means that this file
 # will get sourced when the 'sh' is interactive.  Bash normally only sources ENV
 # when it is in 'posix' mode or has been invoked as 'sh', but my .bashrc will

@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # long view, include . files but not '..' or '.', and classify
 alias ll='ls -lAF'
 

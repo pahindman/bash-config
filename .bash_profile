@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+# shellcheck source=/dev/null
 # Bash automatically sources .bash_profile when started as an interactive login
 # shell, or when started with --login
 #
@@ -16,7 +18,7 @@
 [ -r "$HOME/.profile" ] && source "$HOME/.profile"
 
 # If pyenv is not in path but it is available then add it
-if [ "${PATH#*$HOME/.pyenv/bin}" == "${PATH}" ]; then
+if [ "${PATH#*"$HOME"/.pyenv/bin}" == "${PATH}" ]; then
 	[ -d "$HOME/.pyenv/bin" ] && PATH="$HOME/.pyenv/bin:$PATH"
 fi
 

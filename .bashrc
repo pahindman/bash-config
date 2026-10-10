@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+# shellcheck source=/dev/null
 # Bash automatically sources .bashrc when it is started as an interactive
 # non-login shell, or when it is connected to a network connection, such as
 # when started by rshd or sshd.  In addition, .bash_profile, which is the
@@ -44,11 +46,17 @@ shopt -s histappend
 PROMPT_COMMAND+=('history -a')
 
 if [ -r "$HOME/.git-prompt.sh" ]; then
+	# shellcheck disable=SC2034
 	GIT_PS1_SHOWCOLORHINTS=yes
+	# shellcheck disable=SC2034
 	GIT_PS1_SHOWDIRTYSTATE=yes
+	# shellcheck disable=SC2034
 	GIT_PS1_DESCRIBE_STYLE=branch
+	# shellcheck disable=SC2034
 	GIT_PS1_SHOWUPSTREAM=auto
+	# shellcheck disable=SC2034
 	GIT_PS1_SHOWCONFLICTSTATE=yes
+	# shellcheck disable=SC2034
 	GIT_PS1_SHOWSTASHSTATE=yes
 	PROMPT_COMMAND+=('__git_ps1 "" "\u@\h:\w\$ " "(%s) "')
 	source "$HOME/.git-prompt.sh"
@@ -60,6 +68,7 @@ else
 fi
 
 # fzf Ctrl-R goodness
+# shellcheck disable=SC2034
 FZF_CTRL_R_OPTS=$'--bind ctrl-/:toggle-wrap --wrap-sign "\t↳ "'
 
 # Enable the following tools in the current shell if they are available
