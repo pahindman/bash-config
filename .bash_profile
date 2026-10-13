@@ -17,6 +17,11 @@
 # used when bash is started as sh, and so contains non-bash-specific items
 [ -r "$HOME/.profile" ] && source "$HOME/.profile"
 
+# Set default BASH_LIB_DIR
+if [ -d "$XDG_DATA_HOME/bash-libs" ]; then
+	export BASH_LIB_DIR="$XDG_DATA_HOME/bash-libs"
+fi
+
 # If pyenv is not in path but it is available then add it
 if [ "${PATH#*"$HOME"/.pyenv/bin}" == "${PATH}" ]; then
 	[ -d "$HOME/.pyenv/bin" ] && PATH="$HOME/.pyenv/bin:$PATH"
